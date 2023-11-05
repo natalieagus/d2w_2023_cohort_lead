@@ -1,0 +1,9 @@
+# Ignore Python __pycache__ directories
+__pycache__/
+
+# Ignore pytest cache and temporary files
+.pytest_cache/
+.pytest_cachepre/
+*.pyc
+
+.DS_Store
