@@ -12,18 +12,9 @@ class SimpleAccount(StateMachine):
         self.__start_state = value
 
     def __init__(self, balance):
-        ###BEGIN SOLUTION
-        self.start_state = balance
-        ###END SOLUTIOn
+        ## TODO 
         pass
 
     def get_next_values(self, state, inp):
-        ###BEGIN SOLUTION
-        if inp < 0 and state < 100:
-            next_state = state + inp - 5
-        else:
-            next_state = state + inp
-        
-        output = next_state
-        ###END SOLUTION
-        return next_state, output
+        ## TODO 
+        pass

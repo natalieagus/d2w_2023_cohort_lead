@@ -41,26 +41,12 @@ class MapSM(StateSpaceSearch):
 
     @property
     def legal_inputs(self):
-        ###BEGIN SOLUTION
-        maxsofar = -1
-        for state, neighbours in self.statemap.items():
-            count = len(neighbours)
-            if count > maxsofar:
-                maxsofar = count
-        return set(range(maxsofar))
-        ###END SOLUTION
+        ## TODO 
         pass
 
   
     def get_next_values(self, state, inp):
-        ###BEGIN SOLUTION
-        neighbours = self.statemap.get(state, None)
-        if neighbours != None and inp in self.legal_inputs and inp < len(neighbours):
-            next_state = neighbours[inp]
-            return next_state, next_state
-        else:
-            return state, state 
-        ###END SOLUTION
+        ## TODO 
         pass
             
     

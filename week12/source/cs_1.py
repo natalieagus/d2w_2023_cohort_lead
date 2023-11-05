@@ -3,29 +3,15 @@ from abc import ABC, abstractmethod
 class StateMachine(ABC):
     
     def start(self):
-        ###BEGIN SOLUTION
-        self.state = self.start_state
-        ###END SOLUTION
+        ## TODO 
         pass
 
     def step(self, inp):
-        ###BEGIN SOLUTION
-        ns, o = self.get_next_values(self.state, inp)
-        self.state = ns
-        return o
-        ###END SOLUTION
+        ## TODO 
         pass
         
     def transduce(self, inp_list):
-        ###BEGIN SOLUTION
-        output = []
-        self.start()
-        idx = 0
-        while idx < len(inp_list) and not self.is_done():
-            output.append(self.step(inp_list[idx]))
-            idx += 1
-        return output
-        ###END SOLUTION
+        ## TODO 
         pass
 
     @property

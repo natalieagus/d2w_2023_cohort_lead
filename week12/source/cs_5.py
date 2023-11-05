@@ -18,12 +18,8 @@ class SearchNode:
         self.parent = parent
   
     def path(self):
-        ###BEGIN SOLUTION
-        if self.parent == None:
-            return [Step(self.action, self.state)]
-        else:
-            return self.parent.path() + [Step(self.action, self.state)]
-        ###END SOLUTION
+        ## TODO 
+        pass
   
     def in_path(self, state):
         if self.state == state:
@@ -31,9 +27,8 @@ class SearchNode:
         elif self.parent == None:
             return False
         else:
-            ###BEGIN SOLUTION 
-            return self.parent.in_path(state)
-            ###END SOLUTION
+            ## TODO 
+            pass
   
     def __eq__(self, other):
         if self is None and other is None:
