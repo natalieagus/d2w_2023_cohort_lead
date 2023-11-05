@@ -11,20 +11,10 @@ import pytest
 
 def test_cs_4(df_data_object):
     df = df_data_object 
-    
-    ### BEGIN SOLUTION 
-    df_feature, df_target = get_features_targets(df, ["RM"], ["MEDV"])
-    df_feature_train, df_feature_test, df_target_train, df_target_test = split_data(df_feature, df_target, random_state=100, test_size=0.3)
-    df_feature_train_z,_,_ = normalize_z(df_feature_train)
-    X = prepare_feature(df_feature_train_z)
-    target = prepare_target(df_target_train)
 
-    iterations = 1500
-    alpha = 0.01
-    beta = np.zeros((2,1))
-    beta, _ = gradient_descent_linreg(X, target, beta, alpha, iterations)
-    pred = predict_linreg(df_feature_test, beta)
-    ### END SOLUTION
+    ## TODO 
+    beta, pred, df_feature_test, df_target_test = None 
+    
     
     assert isinstance(pred, np.ndarray)
     assert pred.shape == (151, 1)

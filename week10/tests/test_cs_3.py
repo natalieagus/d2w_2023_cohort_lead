@@ -1,6 +1,10 @@
 import numpy as np 
 from source.cs_3 import gradient_descent_logreg 
-from source.cs_0 import feature, target
+try: 
+    from source.cs_0 import feature, target
+except:
+    print("cs_0 not implemented yet")
+    
 import matplotlib.pyplot as plt
 import pytest 
 

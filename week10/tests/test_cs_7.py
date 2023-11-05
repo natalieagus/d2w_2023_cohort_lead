@@ -1,8 +1,11 @@
 
 import numpy as np 
-from source.cs_6 import confusion_matrix
-from source.cs_4 import predict_logreg
-from source.cs_7 import calc_accuracy
+try: 
+    from source.cs_6 import confusion_matrix
+    from source.cs_4 import predict_logreg
+    from source.cs_7 import calc_accuracy
+except:
+    print("cs_4, cs_6, and cs_7 not implemented yet")
 
 
 def test_cs_7(features_target_beta):

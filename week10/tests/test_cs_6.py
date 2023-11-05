@@ -1,5 +1,8 @@
-from source.cs_6 import confusion_matrix
-from source.cs_4 import predict_logreg
+try: 
+    from source.cs_6 import confusion_matrix
+    from source.cs_4 import predict_logreg
+except:
+    print("cs_4 and cs_6 not implemented yet")
 
 def test_cs_6(features_target_beta):
     df_features_test, df_target_test, beta = features_target_beta 

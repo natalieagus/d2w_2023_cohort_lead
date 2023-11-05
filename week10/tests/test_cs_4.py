@@ -1,7 +1,11 @@
 
 import numpy as np 
-from source.cs_4 import predict_logreg
-from source.cs_0 import df_feature, df_target
+try: 
+    from source.cs_4 import predict_logreg
+    from source.cs_0 import df_feature, df_target
+except:
+    print("cs_0 and cs_4 not implemented yet")
+    
 import matplotlib.pyplot as plt
 import pytest 
 

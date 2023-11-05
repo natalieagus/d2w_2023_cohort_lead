@@ -1,8 +1,11 @@
 
 import numpy as np 
-from source.cs_0 import get_features_targets, df, replace_target, split_data, normalize_z, prepare_feature, prepare_target
-from source.cs_3 import gradient_descent_logreg
-from source.cs_4 import predict_logreg
+try: 
+    from source.cs_0 import get_features_targets, df, replace_target, split_data, normalize_z, prepare_feature, prepare_target
+    from source.cs_3 import gradient_descent_logreg
+    from source.cs_4 import predict_logreg
+except:
+    print("cs_0, cs_3, and cs_4 not implemented yet")
 import matplotlib.pyplot as plt
 import pytest
 
