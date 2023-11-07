@@ -43,3 +43,15 @@ pytest tests/test_cs_<number>.py
 ```
 
 ![](/images/readme/2023-11-05-11-58-53.png)
+
+### Running Pytest with VSCode
+
+If you use VSCode integrated test environment, go to the root path, and put this under `.vscode/settings.json`, and change `weekX` to the week you're currently testing.
+
+```
+{
+  "python.testing.pytestArgs": ["weekX"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
+```
