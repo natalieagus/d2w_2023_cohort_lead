@@ -19,7 +19,7 @@ def prepare_df():
     current_directory = os.getcwd()
 
     # Check if the "week9" directory is one level above the current directory
-    if os.path.basename(current_directory) == "Week 9":
+    if os.path.basename(current_directory) == "week9":
         # If the script is in the "week9" directory
         file_path = os.path.join(current_directory, "data",  "housing_processed.csv")
     else:
