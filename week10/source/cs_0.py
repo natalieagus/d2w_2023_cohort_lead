@@ -21,6 +21,17 @@ def split_data(df_feature, df_target, random_state=None, test_size=0.5):
     ## TODO 
     pass  
 
+import os
+current_directory = os.getcwd()
+
+# Check if the "week10" directory is one level above the current directory
+if os.path.basename(current_directory) == "week10":
+    # If the script is in the "week10 directory
+    file_path = os.path.join(current_directory, "data",  "breast_cancer_data.csv")
+else:
+    # If the script is one level above the "Week 9" directory
+    file_path = os.path.join(current_directory, "week10", "data", "breast_cancer_data.csv")
+    
 ## TASK 2
 df = None
 
