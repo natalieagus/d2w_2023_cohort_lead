@@ -8,14 +8,26 @@ from source.cs_1 import prepare_feature, prepare_target
 from source.cs_4 import split_data
 from source.cs_2 import gradient_descent_linreg
 from source.cs_3 import predict_linreg
-
+import os
 
 ## Global variables shared between tests
 def pytest_configure():
     pytest.plot_output = False 
     
 def prepare_df():
-    df = pd.read_csv("./data/housing_processed.csv")
+    # Get the current working directory
+    current_directory = os.getcwd()
+
+    # Check if the "Week 9" directory is one level above the current directory
+    if os.path.basename(current_directory) == "Week 9":
+        # If the script is in the "Week 9" directory
+        file_path = os.path.join(current_directory, "data",  "housing_processed.csv")
+    else:
+        # If the script is one level above the "Week 9" directory
+        file_path = os.path.join(current_directory, "week9", "data", "housing_processed.csv")
+
+    # df = pd.read_csv("./data/housing_processed.csv")
+    df = pd.read_csv(file_path)
     return df 
 
 def get_feature_target():
