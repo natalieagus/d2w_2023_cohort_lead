@@ -7,7 +7,6 @@ def calc_linreg(X, beta):
     # beta is vector of dimension # parameters * 1
     # output should be y hat vector having dimension of # samples * 1
     return np.matmul(X, beta)
-    pass
 
 
 def compute_cost_linreg(X, y, beta):
@@ -42,7 +41,7 @@ def prepare_feature(df_feature):
     # feature = [[3], [5], [23], ... [9]]
     # X = [ [1,3], [1, 5], [1, 23], ... [1,9]]
     X = np.concatenate((np.ones((feature.shape[0], 1)), feature), axis=1)
-    pass
+    return X
 
 
 # the target is basically y --> dependent variable
