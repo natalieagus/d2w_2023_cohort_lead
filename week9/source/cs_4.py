@@ -29,15 +29,18 @@ def split_data(df_feature, df_target, random_state=None, test_size=0.5):
     indexes = set(indexes)
     test_index = set(test_index)
     train_index = indexes - test_index
+    # convert set into list because pandas loc support for set as index will be deprecated soon (warning as of 2023)
+    test_index_list = list(test_index)
+    train_index_list = list(train_index)
 
     # prepare test set
     df_feature_test = df_feature.loc[
-        test_index, :
+        test_index_list, :
     ]  # select rows with test_index, and all columns
-    df_target_test = df_target.loc[test_index, :]
+    df_target_test = df_target.loc[test_index_list, :]
 
     # prepare train set
-    df_feature_train = df_feature.loc[train_index, :]
-    df_target_train = df_target.loc[train_index, :]
+    df_feature_train = df_feature.loc[train_index_list, :]
+    df_target_train = df_target.loc[train_index_list, :]
 
     return df_feature_train, df_feature_test, df_target_train, df_target_test
