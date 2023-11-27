@@ -13,7 +13,7 @@ class CokeMachine(StateMachine):
 
     # the FIRST argument to any function declared inside a class is ALWAYS the reference to the instance calling this function
     # get_next_values is the LOGIC of the state machine
-    # this is a PURE function, meaning that its output SOLELY depends on its input (state, inp)
+    # this is a PURE function, meaning that its output SOLELY depends on its input (state, inp), and there's no side effects (does not change ANYTHING outside of this function either)
     def get_next_values(self, state, inp):
         # write default output, next_state first
         # these are DEFAULT values, meaning that if we don't have that specific legal state+inp combo, we return these
@@ -63,4 +63,5 @@ class CokeMachine(StateMachine):
 
         # if you reach here, that means you either go to one of the state, inp combi above, or still end up with default next_state, and output
         # always return a tuple in this order: next_state and output
-        return next_state, output
+        # return  output, next_state # this gg
+        return next_state, output  # must be in this order, see step() in StateMachine ABC
