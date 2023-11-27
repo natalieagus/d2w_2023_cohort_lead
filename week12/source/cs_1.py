@@ -47,7 +47,7 @@ class StateMachine(ABC):
 
         # go through ALL the inputs
         while (idx < len(inp_list) and not self.is_done()):
-            output.append(self.step(inp_list(idx)))
+            output.append(self.step(inp_list[idx]))
             idx += 1
         return output
 
