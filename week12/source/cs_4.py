@@ -80,8 +80,8 @@ class MapSM(StateSpaceSearch):
         # why do we need to check if inp is in self.legal_inputs?
         # cos legal_inputs is computed from self.statemap
         # and neighbours is also obtained from self.statemap
-        # so isn't is sufficient to just check of inp<len(neighbours) ie: accepted in this state?
-        if inp in self.legal_inputs and inp < len(neighbours):
+        # so isn't is sufficient to just check if inp is int, inp<len(neighbours) and inp is +ve ie: accepted in this state?
+        if isinstance(inp, int) and inp >= 0 and inp < len(neighbours):
             next_state = neighbours[inp]
             output = next_state  # output should "display next_state"
             return next_state, output
