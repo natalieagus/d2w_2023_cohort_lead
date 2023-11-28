@@ -50,7 +50,29 @@ class StateMachine(ABC):
         pass
 
     @abstractmethod  # implement in subclass
-    def get_next_values(self, state, inp):
+    def get_next_values(_, state, inp):
+        """
+        Determines the next state and output based on the current state and input.
+
+        Parameters:
+        _ : Unused parameter.
+        state : Current state, can be of any type.
+        inp : Input value, can be of any type.
+
+        Returns:
+        Tuple: (next_state, output)
+            - next_state: Updated state after processing input.
+            - output: Output tuple based on state and input.
+                Format: (value, description, additional_info)
+                - e.g: (0, "coke", 50) represents 0$ in the machine, "coke" being dispensed, and 50c of change. 
+                - This depends on implementation
+
+        Note:
+        - State and input can be any type.
+        - The function follows specific logic based on state and input combinations.
+        - Handles transitions between states and generates appropriate outputs.
+        - The order of return values in the tuple is (next_state, output).
+        """
         pass
 
     # this is an optional method, you can override it in subclass if your SM has a done state

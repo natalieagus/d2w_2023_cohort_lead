@@ -42,4 +42,5 @@ class CokeMachine(StateMachine):
             next_state = 0
             output = (0, "coke", 50)
 
+    # return output, next_state # GG
         return next_state, output  # must be in this order
