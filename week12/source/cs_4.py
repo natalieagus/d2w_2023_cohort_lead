@@ -48,7 +48,7 @@ class MapSM(StateSpaceSearch):
     @property
     def legal_inputs(self):
         # one liner answer
-        # return set(max([len(neighbours) for _, neighbours in self.statemap.items()]))
+        # return set(range(max([len(neighbours) for _, neighbours in self.statemap.items()])))
 
         max_so_far = -1  # because len(neighbours) are always >= 0
 
