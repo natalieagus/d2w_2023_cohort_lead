@@ -94,7 +94,6 @@ class MapSM(StateSpaceSearch):
         if isinstance(inp, int) and inp >= 0 and inp < len(neighbours):
             next_state = neighbours[inp]
             output = next_state  # output should "display next_state"
-            return next_state, output
 
         # if we reach here, then our input is illegal or our input is not accepted by this state
         return next_state, output
