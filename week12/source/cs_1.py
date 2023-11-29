@@ -81,3 +81,19 @@ class StateMachine(ABC):
 
     def is_done(self):
         return self.done(self.state)
+
+
+# class SpriteMachine(StateMachine):
+
+#     # override done method in parent's
+#     # because we have specific implementation for this SpriteMachine
+#     def done(self, state):
+#         if (state == 1):
+#             return True
+#         return False
+#     # other methods
+
+
+# spriteMachine = SpriteMachine()
+# # this is going to call is_done in StateMachine, then it's going to call done in SpriteMachine (the "youngest" version)
+# spriteMachine.is_done(1)
