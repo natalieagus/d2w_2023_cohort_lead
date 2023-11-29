@@ -74,16 +74,20 @@ class SearchNode:
         # need to check if we are comparing to another instance of SearchNode or not
         # maybe it's better to just check of self or other is instance of SearchNode
         # because other can be not None, but not a SearchNode
-        if self is None and other is None:
-            return True
-        elif self is None:
+
+        # check if other isinstance SearchNode
+        if (not isinstance(other, SearchNode)):
             return False
-        elif other is None:
-            return False
-        else:
-            # check if the other state has an action or a parent
-            # this might be throwing an error if other.parent is None because we cant compare == with a None
-            # it's possible for x.parent to be None because it's a root Node
-            # it's also possible for x.action to be None because it's a final Node (finish state)
-            return self.state == other.state and self.parent == other.parent and \
-                self.action == other.action
+            # actually this isn't true, cos if other is not SearchNode then how can we even compare
+            # raise ValueError("The other object must be an instance of SearchNode")
+
+        # ??? redundant, because in order for this func to be called, self must be a SearchNode
+        # if self is None:
+        #     return False
+
+        # check if the other state has an action or a parent
+        # this might be throwing an error if other.parent is None because we cant compare == with a None
+        # it's possible for x.parent to be None because it's a root Node
+        # it's also possible for x.action to be None because it's a final Node (finish state)
+        return self.state == other.state and self.parent == other.parent and \
+            self.action == other.action
