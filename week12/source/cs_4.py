@@ -5,6 +5,16 @@ from source.cs_1 import StateMachine
 
 
 class StateSpaceSearch(StateMachine):
+    # there's no __init__ here. we are going to use StateMachine's init, or default python init
+
+    # this method is already implemented in StateMachine
+    # overriding
+    # if we do SSS = StateSpaceSearch(...), and SSS.done(), this func is called and not the parent's
+    # def done(self, state):
+    #     super().done()
+    #     if (state == "end state"):
+    #         return True
+    #     return False
 
     @property
     @abstractmethod
